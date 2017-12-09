@@ -1,0 +1,20 @@
+```
+ state = {
+        orderForm: {
+            name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Your Name'
+                },
+                value: ''
+            }
+       }
+}
+```
+Whenever u are updating the form and changing the value, u need to do immutably.
+var dummy = {...this.state.orderForm}
+
+But here u still have not cloned this deeply as name,elementConfig is nested object. so u can do
+var name = {...dummy}
+dummy["orderform"]["name"] = name;
